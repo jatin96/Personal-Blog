@@ -4,6 +4,8 @@ date: 2020-03-22 9:00:00
 author: jatin
 path: '/third-post'
 image: '../../images/js-image.jpg'
+tags:
+- art
 
 ---
 
