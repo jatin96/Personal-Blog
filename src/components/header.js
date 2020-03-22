@@ -25,6 +25,7 @@ class Header extends Component {
   }
   render() {
     return (
+      <div className="container">
       <div>
       <Navbar fixed = "top" color="light" light expand="sm">
         <NavbarBrand href="/">{this.props.siteTitle}</NavbarBrand>
@@ -43,6 +44,7 @@ class Header extends Component {
           </Nav>
         </Collapse>
       </Navbar>
+    </div>
     </div>
     );
   }
