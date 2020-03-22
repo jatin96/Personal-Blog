@@ -1,4 +1,14 @@
-#ignoring the node modules
+
+
 *.cache
-*.git
-node_modules/*git 
+*.log
+
+#ignoring node module directory
+node_modules/
+
+#ignoreing build directory
+/dist
+
+.vscode/
+.idea/
+*.sw*
