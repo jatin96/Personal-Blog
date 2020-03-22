@@ -1,0 +1,4 @@
+#ignoring the node modules
+*.cache
+*.git
+node_modules/*
