@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import { graphql,staticQuery } from 'gatsby';
 import Post from '../components/Post'
 import {Row, Col} from "reactstrap"
+import SideBar from '../components/Sidebar'
 
 const IndexPage = () => (
   <Layout>
@@ -19,19 +20,23 @@ const IndexPage = () => (
       return (
         <div>
           {data.allMarkdownRemark.edges.map(({ node }) => (
-            <Post title={node.frontmatter.title}
+            <Post
+            key={node.id} 
+            title={node.frontmatter.title}
             author={node.frontmatter.author}
             date={node.frontmatter.date}
-            path={node.frontmatter.path}
+            slug={node.fields.slug}
             body={node.frontmatter.body}
-            fluid={node.frontmatter.image.childImageSharp.fluid}/>
+            fluid={node.frontmatter.image.childImageSharp.fluid}
+            tags={node.frontmatter.tags}/>
+            
           ))}
         </div>
       )
     }} />
       </Col>
       <Col md = "4">
-        <div style={{width: "100%", height: "100%", backgroundColor: "rgba(0,0,0,0.4)"}}></div>
+       <SideBar></SideBar>
       </Col>
     </Row>
   </Layout>
@@ -47,7 +52,7 @@ query {
           title
           date(formatString: "MMM Do YYYY")
           author
-          path
+          tags
           image{
             childImageSharp{
               fluid(maxWidth: 600){
@@ -55,6 +60,9 @@ query {
               }
             }
           }
+        }
+        fields{
+          slug
         }
         excerpt
       }
