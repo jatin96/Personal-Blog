@@ -2,6 +2,7 @@ import React from 'react'
 import {Card, CardTitle, CardBody, FormGroup, Form, Input, Button} from 'reactstrap'
 import {graphql, StaticQuery, Link} from 'gatsby'
 import Img from 'gatsby-image'
+import {slugify} from '../utility/utilityFunction'
 
 const Sidebar = () => (
     <div>
@@ -29,12 +30,12 @@ const Sidebar = () => (
                     <div>
                         {data.allMarkdownRemark.edges.map(({node}) => (
                             <Card key={node.id}>
-                                <Link to={node.frontmatter.path}>
+                                <Link to={node.fields.slug}>
                                     <Img className="card-image-top" fluid={node.frontmatter.image.childImageSharp.fluid}></Img>
                                 </Link>
                                 <CardBody>  
                                     <CardTitle>
-                                        <Link to={node.frontmatter.path}>
+                                        <Link to={node.fields.slug}>
                                             {node.frontmatter.title}
                                         </Link>
                                     </CardTitle>
@@ -50,7 +51,7 @@ const Sidebar = () => (
     </div>
 )
 
-const sidebarQuery = graphql `
+const sidebarQuery = graphql`
 query sidebarQuery {
     allMarkdownRemark(
         sort: {fields: [frontmatter___date], order: DESC}
@@ -61,7 +62,6 @@ query sidebarQuery {
                 id
                 frontmatter{
                     title
-                    path
                     image{
                         childImageSharp{
                             fluid(maxWidth: 300){
@@ -69,6 +69,9 @@ query sidebarQuery {
                             }
                         }
                     }
+                }
+                fields{
+                    slug
                 }
             }
         }
