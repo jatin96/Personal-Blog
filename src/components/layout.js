@@ -9,7 +9,6 @@ import React from "react"
 import PropTypes from "prop-types"
 import { graphql, StaticQuery } from "gatsby"
 import Footer from './Footer'
-
 import Header from "./header"
 import '../styles/index.scss'
 import Sidebar from "./Sidebar";
