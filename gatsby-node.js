@@ -8,6 +8,7 @@
 
 const { slugify } = require('./src/utility/utilityFunction');
 const path = require('path')
+const authors = require('./src/templates/authors')
 exports.onCreateNode = ({node, actions}) => {
     const {createNodeField } = actions
     if(node.internal.type === 'MarkdownRemark') {
@@ -48,9 +49,12 @@ exports.createPages = ({actions, graphql}) => {
                 path: node.fields.slug,
                 component: singlePostTemplate, 
                 context: {
-                    slug: node.fields.slug
+                    slug: node.fields.slug,
+                    imageUrl: authors.find(x => x.name === node.frontmatter.author).imageUrl
                 }
             })
         })
     })
 }
+
+

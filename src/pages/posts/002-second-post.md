@@ -1,7 +1,7 @@
 ---
 title: 'Second Post - Introduction'
 date: 2020-03-23 8:00:00
-author: jatin
+author: 'Jatin Narula'
 image: '../../images/js-image.jpg'
 tags:
 - code

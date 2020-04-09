@@ -9,11 +9,9 @@ import {Row, Col} from "reactstrap"
 import SideBar from '../components/Sidebar'
 
 const IndexPage = () => (
-  <Layout>
+  <Layout pageTitle="Code Blog">
     <SEO title="Home"  keywords={[`gatsby`, `application`, `react`]}/>
     <h1>home page</h1>
-    <Row>
-      <Col md="8">
       <StaticQuery 
     query={indexQuery} 
     render={data => {
@@ -34,11 +32,6 @@ const IndexPage = () => (
         </div>
       )
     }} />
-      </Col>
-      <Col md = "4">
-       <SideBar></SideBar>
-      </Col>
-    </Row>
   </Layout>
 )
 
