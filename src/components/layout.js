@@ -30,7 +30,8 @@ const Layout = ({authorImageFluid, children, pageTitle, postAuthor }) => (
     {/* <script src="https://kit.fontawesome.com/ed90065285.js" crossOrigin="anonymous"></script> */}
    <link
       rel="stylesheet"
-      src="https://kit.fontawesome.com/ed90065285.js"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+      // src="https://kit.fontawesome.com/ed90065285.js"
       crossOrigin="anonymous"
       />
       <Header siteTitle={data.site.siteMetadata.title} />

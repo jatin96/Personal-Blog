@@ -2,7 +2,6 @@ import React from 'react'
 import {Card, CardTitle, CardBody, FormGroup, Form, Input, CardText} from 'reactstrap'
 import {graphql, StaticQuery, Link} from 'gatsby'
 import Img from 'gatsby-image'
-import {slugify} from '../utility/utilityFunction'
 
 const Sidebar = ({author, authorFluid}) => (
     <div>
@@ -22,7 +21,7 @@ const Sidebar = ({author, authorFluid}) => (
         )}
         <Card>
             <CardBody>
-                <CardTitle class="text-center text-upper-case md-3">
+                <CardTitle className="text-center text-upper-case md-3">
                     NewsLetter
                 </CardTitle>
                 <Form className="text-center">
