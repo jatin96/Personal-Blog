@@ -10,6 +10,8 @@ const { slugify } = require('./src/utility/utilityFunction');
 const path = require('path')
 const authors = require('./src/templates/authors')
 const  _ = require('lodash')
+
+
 exports.onCreateNode = ({node, actions}) => {
     const {createNodeField } = actions
     if(node.internal.type === 'MarkdownRemark') {
@@ -23,7 +25,6 @@ exports.onCreateNode = ({node, actions}) => {
 }
 exports.createPages = ({actions, graphql}) => {
     const {createPage } = actions;
-    const singlePostTemplate = path.resolve('src/templates/single-post.js')
     const templates = {
         singlePost: path.resolve('src/templates/single-post.js'),
         tagsPage: path.resolve('src/templates/tags-page.js')
@@ -78,7 +79,7 @@ exports.createPages = ({actions, graphql}) => {
             component: templates.tagsPage,
             context: {
                 tags,
-                tagsPostCount
+                tagsPostCount,
             }
         })
     })

@@ -1,13 +1,12 @@
 import React from "react"
-import { Link, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql,StaticQuery} from 'gatsby';
 import Post from '../components/Post'
 
-const IndexPage = () => (
-  <Layout pageTitle="Code Blog">
+const IndexPage = () => {
+ return ( <Layout pageTitle="Code Blog">
     <SEO title="Home"  keywords={[`gatsby`, `application`, `react`]}/>
       <StaticQuery 
     query={indexQuery} 
@@ -23,14 +22,17 @@ const IndexPage = () => (
             slug={node.fields.slug}
             body={node.frontmatter.body}
             fluid={node.frontmatter.image.childImageSharp.fluid}
-            tags={node.frontmatter.tags}/>
+            tags={node.frontmatter.tags}
+          />
             
           ))}
         </div>
       )
-    }} />
+    }} 
+    />
   </Layout>
 )
+}
 
 const indexQuery = graphql`
 query {

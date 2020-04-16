@@ -8,7 +8,7 @@ const tagsPage = ({pageContext}) => {
     const {tags, tagsPostCount} = pageContext;
     return (
         <Layout pageTitle="App Tags">
-            <SEO title="All tags" keywords={['tags', 'topics']}></SEO>
+            <SEO title="All tags"></SEO>
             <ul>
                 {tags.map(tag => (
                     <li key={tag} style={{ marginBottom: '10px'}}><Button color="primary" href={`/tag/${slugify(tag)}`}>
