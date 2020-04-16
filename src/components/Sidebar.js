@@ -22,7 +22,7 @@ const Sidebar = ({author, authorFluid}) => (
         )}
         <Card>
             <CardBody>
-                <CardTitle class="text-center text-upper-case md-3">
+                <CardTitle className="text-center text-upper-case md-3">
                     NewsLetter
                 </CardTitle>
                 <Form className="text-center">
